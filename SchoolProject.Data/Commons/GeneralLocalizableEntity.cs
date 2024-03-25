@@ -1,8 +1,9 @@
-﻿using System.Globalization;
+﻿using SchoolProject.Data.Entities;
+using System.Globalization;
 
 namespace SchoolProject.Data.Commons
 {
-    public class GeneralLocalizableEntity
+    public class GeneralLocalizableEntity: ISoftDelete
     {
         public string Localize(string textAr, string textEN)
         {

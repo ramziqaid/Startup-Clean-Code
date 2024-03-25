@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SchoolProject.Infrustructure.Data;
 
@@ -11,9 +12,11 @@ using SchoolProject.Infrustructure.Data;
 namespace SchoolProject.Infrustructure.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240317103710_isdelete")]
+    partial class isdelete
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -141,8 +144,8 @@ namespace SchoolProject.Infrustructure.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<DateTimeOffset?>("DeletedAt")
-                        .HasColumnType("datetimeoffset");
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int?>("InsManager")
                         .HasColumnType("int");
@@ -353,14 +356,14 @@ namespace SchoolProject.Infrustructure.Migrations
                     b.Property<int>("DID")
                         .HasColumnType("int");
 
-                    b.Property<DateTimeOffset?>("DeletedAt")
-                        .HasColumnType("datetimeoffset");
-
                     b.Property<string>("ENameAr")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ENameEn")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
@@ -401,8 +404,8 @@ namespace SchoolProject.Infrustructure.Migrations
                     b.Property<int?>("DID")
                         .HasColumnType("int");
 
-                    b.Property<DateTimeOffset?>("DeletedAt")
-                        .HasColumnType("datetimeoffset");
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -450,8 +453,8 @@ namespace SchoolProject.Infrustructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SubID"));
 
-                    b.Property<DateTimeOffset?>("DeletedAt")
-                        .HasColumnType("datetimeoffset");
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -482,8 +485,8 @@ namespace SchoolProject.Infrustructure.Migrations
                     b.Property<string>("DNameEn")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTimeOffset?>("DeletedAt")
-                        .HasColumnType("datetimeoffset");
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");

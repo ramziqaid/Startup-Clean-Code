@@ -3,11 +3,14 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using SchoolProject.Data.Entities.Identity;
 using SchoolProject.Data.Helpers;
 using SchoolProject.Infrustructure.Data;
+using SchoolProject.Infrustructure.Interceptor;
+using SchoolProject.Infrustructure.Repositories;
 using SchoolProject.Infrustructure.Seeder;
 using System.Text;
 
@@ -21,9 +24,11 @@ namespace SchoolProject.Infrustructure
             services.AddDbContext<ApplicationDBContext>(option =>
             {
                 option.UseSqlServer(configuration.GetConnectionString("dbcontext"),
-                        builder => builder.MigrationsAssembly(typeof(ApplicationDBContext).Assembly.FullName));                 
-            }); 
-         
+                        builder => builder.MigrationsAssembly(typeof(ApplicationDBContext).Assembly.FullName));
+                option.AddInterceptors(new UpdateAuditableInterceptor());
+                option.AddInterceptors(new SoftDeleteInterceptor());
+            });
+            
             AddMigration(services);
             services.AddIdentity<User, Role>(option =>
             {

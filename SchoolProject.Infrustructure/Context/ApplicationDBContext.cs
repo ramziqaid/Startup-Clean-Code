@@ -39,6 +39,8 @@ namespace SchoolProject.Infrustructure.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             modelBuilder.UseEncryption(_encryptionProvider);
+            modelBuilder.Entity<Student>()
+                .HasQueryFilter(x => x.IsDeleted == false);
         }
     }
 }

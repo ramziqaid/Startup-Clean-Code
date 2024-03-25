@@ -116,6 +116,7 @@ namespace SchoolProject.Service.Implementations
             }
             var userClaims = await _userManager.GetClaimsAsync(user);
             claims.AddRange(userClaims);
+            //claims.Add( new Claim("Create Student", "True"));
             return claims;
         }
 
