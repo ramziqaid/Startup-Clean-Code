@@ -1,0 +1,13 @@
+ 
+
+<input 
+    [id]="id"
+    [name]="name"
+    [(ngModel)]="value"  
+    class="form-control" 
+    (blur)="onBlur()"
+    [required]="true"
+    #name2="ngModel" 
+     >
+     <validation-messages [formCtrl]="name2"></validation-messages>
+    

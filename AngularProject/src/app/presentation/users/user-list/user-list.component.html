@@ -1,0 +1,51 @@
+<p>user-list works!</p>
+<input appBlockCopyPaste type="">
+
+<!-- <U-datatable [columns]="cols" [data]="data"></U-datatable> -->
+
+<!-- <ui-datatable [columns]="cols" [data]="data">
+    <header><h1>Angular</h1></header>
+    <content>One framework. Mobile & desktop.</content>
+    <footer><b>Super-powered by Google </b></footer>
+   </ui-datatable> -->
+ 
+<!-- {{data | json}} -->
+ 
+<form #fpForm="ngForm">
+   <div class="row">
+      <div class="col-6">
+         <label class="form-label" for="exampleInputEmail1">Email address</label>   
+            <ui-textbox name="someValue" 
+               [id]="'id1'"
+               [name]="'name1'"
+               [(ngModel)]="dataModel"> 
+            </ui-textbox> 
+      </div>
+        
+       <div class="col-6">
+         <label class="form-label" for="exampleInputEmail1">Email address</label>   
+       <ui-textbox name="someValue" 
+         [id]="'id2'"
+         [name]="'name2'"
+         [(ngModel)]="dataModel"
+         #name2="ngModel" 
+         >   
+      </ui-textbox> 
+      <validation-messages [formCtrl]="name2"></validation-messages>
+      </div>
+   
+      <div class="col-lg-6 col-md-6  form-group">
+         <label for="organizationName" class="col-form-label">{{ "label.organizationName" | translate }} </label>
+         <div>
+           <input type="text" class="form-control" name="organizationName"
+               [id]="organizationName"
+               [required]="true"
+             [(ngModel)]="dataModel" maxlength="150" #organizationName="ngModel" />
+           <validation-messages [formCtrl]="organizationName"></validation-messages>
+         </div>
+       </div>
+    </div>
+</form>
+ 
+
+ <div>{{ 'HELLO' | translate }}</div>

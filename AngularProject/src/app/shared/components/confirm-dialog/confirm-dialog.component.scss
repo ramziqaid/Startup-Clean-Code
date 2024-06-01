@@ -1,0 +1,69 @@
+.custom-alert {  
+    min-width:50% !important;  
+}  
+:host {
+    ::ng-deep .customDialog { 
+        min-width:20% !important; 
+        max-width:40% !important; 
+    }
+}
+.modal-backdrop.in {  
+    opacity: 0.9;  
+}  
+  
+.modal-body {  
+    background-color: whitesmoke;  
+    border-radius: 11px;  
+   
+}  
+  
+.modal {  
+    background-color: rgba(58, 51, 51, 0.4);  
+    padding-top:5px;  
+    //background-color: #f4516c;
+}  
+  
+.confirm-message {  
+    font-family:'Times New Roman', Times, serif;  
+    font-size:20px;  
+    font-weight:bold;  
+    margin-bottom:0px;  
+    margin-top:5px;  
+}  
+  
+.confirm-button {  
+    text-align: center;  
+    margin: 15px 0px 15px 0px;  
+}  
+  
+.btn-no {  
+    background-color: #f4516c;  
+    color:white;  
+}  
+  
+.btn-yes {  
+    background-color: #716aca;  
+    color:white;  
+}   
+
+.confirmation-dialog {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .confirmation-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .confirmation-message {
+    margin-bottom: 15px;
+  }
+  
+  .confirmation-buttons button {
+    margin: 0 10px;
+  }

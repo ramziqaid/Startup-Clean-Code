@@ -1,0 +1,26 @@
+.canelBtn {
+    background: #fff;
+    border: solid 1px #f5f5f5;
+    color: #808080
+  }
+  
+  ::ng-deep
+  ::ng-deep {
+    .btn-default {
+      text-shadow: none;
+      color: #fff !important;
+    }
+  
+    .btn-focus, .btn-brand.disabled, .btn-brand:disabled {
+      border: none
+    }
+  }
+  
+  button[disabled] {
+    cursor: not-allowed
+  }
+  
+  button:focus {
+    box-shadow: 0 0px 0px #b8b7cf, -3px 1px 8px #b8b7cf !important;
+  }
+  

@@ -1,0 +1,91 @@
+/*Checkboxes styles*/
+
+
+input.chk {
+    opacity: 1;
+    filter: alpha(opacity=0);
+  
+    & + label {
+      display: block;
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 20px;
+      font: 14px/20px 'Open Sans', Arial, sans-serif;
+      color: #ddd;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+  
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    /*&:focus ~ span {
+      box-shadow: 0 5px 8px rgba(0, 0, 0, 0.075), 0 0 19px rgba(0, 0, 0, 0.6);
+    }*/
+    &:checked + label:before {
+      width: 10px;
+      top: 5px;
+      left: 13px;
+      border-radius: 0;
+      opacity: 1;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  
+    &:focus + span {
+      box-shadow: 0 0px 0px #b8b7cf, -3px 1px 8px #b8b7cf !important;
+    }
+  }
+  
+  .m-checkbox {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  
+  
+  .disabled-checkbox {
+    cursor: not-allowed
+  }
+  
+  .m-checkbox.m-checkbox--brand.m-checkbox--solid > span.notCheckedCheck {
+    background-color: transparent !important
+  }
+  
+  .m-checkbox.m-checkbox--brand.m-checkbox--solid > span:after {
+    border-width: 0px 1px 0px 20px;
+    border-color: #fff !important;
+    border-style: solid;
+  }
+  
+  .m-checkbox.m-radio--solid:hover > input:not([disabled]) ~ span, .m-checkbox.m-radio--solid > input:focus ~ span, .m-checkbox.m-checkbox--solid:hover > input:not([disabled]) ~ span, .m-checkbox.m-checkbox--solid > input:focus ~ span {
+    transition: none !important
+  }
+  
+  .m-checkbox > span:after {
+    width: 5px !important;
+    height: 11px !important;
+    top: 40% !important;
+    left: 48% !important;
+  }
+  
+  .m-checkbox > span {
+    width: 17px;
+    height: 17px;
+  }
+  
+  /*::ng-deep {
+    .h-table-dataTable {
+      h-checkBox .m-checkbox.m-checkbox--brand.m-checkbox--solid > span.checkedCheck.checkedCheck {
+        &:after {
+          width: 8px !important;
+          height: 18px !important;
+          top: 15% !important;
+        }
+      }
+    }
+  }*/
+  

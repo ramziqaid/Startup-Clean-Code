@@ -1,0 +1,40 @@
+<p class="bs-component"> 
+<button   type="button" *ngIf="showNew"  color="primary"   class="btn btn-primary" id="btnNew" 
+title='{{ "NEW" | translate }}' (click)="newClick()" [disabled]="getStatus(0)">
+    {{ "NEW" | translate }} 
+</button>
+
+<button   color="primary" type="button" *ngIf="showEdit" class="btn btn-primary"id="btnEdit" 
+title='{{ "EDIT" | translate }}' (click)="editClick()" [disabled]="getStatus(1)">
+    {{ "EDIT" | translate }}  
+</button>
+
+<button   color="primary" type="submit" *ngIf="showSave"  class="btn btn-primary" id="btnSave" 
+title='{{ "SAVE" | translate }}'  (click)="saveClick()" value="Submit"   [disabled]="getStatus(2)">
+{{ "SAVE" | translate }}
+</button>
+
+<button   color="primary" type="button" *ngIf="showDelete"  class="btn btn-primary" id="btnDelete" 
+title='{{ "DELETE" | translate }}' (click)="deleteClick()" [disabled]="getStatus(3)">
+   {{ "DELETE" | translate }} 
+</button>
+
+<button   color="primary" type="button" *ngIf="showCancel"  class="btn btn-primary" id="btnCancel" 
+title='{{ "CANCEL" | translate }}' (click)="cancelClick()" [disabled]="getStatus(4)">
+        
+    {{ "CANCEL" | translate }} 
+</button>
+
+<button   color="primary" type="button" *ngIf="showPrint"
+title='{{ "PRINT" | translate }}'  class="btn btn-primary" id="btnPrinte"  (click)="printClick()">
+      
+  {{ "PRINT" | translate }} 
+</button> 
+
+<!-- <app-MultiFilesManager (onUploadFinished)="uploadFinishedFire($event)" [canAddRemove]="getStatus(0)"   *ngIf="showAttachmentBTN"
+[referenceID]="referenceID" [text]="textUpload">
+</app-MultiFilesManager> -->
+ 
+</p> 
+ 
+       

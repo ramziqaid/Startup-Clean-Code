@@ -1,0 +1,16 @@
+<label [class]="class"
+       *ngIf="!hidden"
+       [class.disabled-checkbox]="innerDisabled"
+       [class.m-checkbox]="true"
+       [class.m-checkbox--solid]="true"
+       [class.m-checkbox--brand]="true">
+  <input type="checkbox"
+         [attr.name]="name"
+         [attr.disabled]="innerDisabled?'':null"
+         [checked]="checked"
+         (change)="changeCheck()"
+         class="chk">
+  <ng-content></ng-content>
+  <span [class.notCheckedCheck]="!checked" [class.checkedCheck]="checked"></span>
+</label>
+ 

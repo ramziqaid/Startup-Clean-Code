@@ -1,0 +1,16 @@
+ 
+<input class="form-control" 
+  [placeholder]="placeholder" 
+  [required]="required"
+  (change)="changeValue($event)"
+  (input)="onInputChange($event)"
+  [type]="type"
+  [id]="id"
+  [(ngModel)]="value"
+  [name]="name"
+  #namex="ngModel"
+  [disabled]="disabled"
+  > 
+
+  <validation-messages [formCtrl]="namex"></validation-messages>
+

@@ -1,0 +1,41 @@
+<actionBar   
+ (newAction)="newClick()"
+ (editAction)="edit()" 
+ (saveAction)="save()" 
+ (deleteAction)="delete()"
+  (cancelAction)="reset()"   
+  (showNew)="showNew"
+  (showEdit)="showEdit"
+  (showSave)="showSave"
+  (showDelete)="showDelete"
+  (showCancel)="showCancel"
+  (showPrint)="showPrint"
+  >
+ </actionBar> 
+ <U-button  type="submit" (onClick)="show()">
+  <!--(click)="signin()"-->
+  {{ 'SHD_SIGN_IN' | translate }}
+</U-button> 
+ 
+<U-checkbox name="all" [(checked)]="allApplicationSelected">
+  {{ 'SHD_SIGN_IN' | translate }}
+</U-checkbox>
+<div class="col-16">
+  <U-label name="lblID">{{ 'FGL_BANK'| translate}}</U-label>
+</div>
+<!-- <div class="col-16">
+  <U-textbox name="lblID">{{ 'FGL_BANK'| translate}}</U-textbox>
+</div>  -->
+ 
+ <form>
+  <U-datatable 
+  [columns]="debitSideColumns"  
+  [data]="data"
+  (onEditAction)="onEditAction($event)"
+  (onDeleteAction)="onDeleteAction($event)"
+  >  
+</U-datatable>  
+ </form>
+ 
+
+  

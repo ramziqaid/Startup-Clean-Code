@@ -1,0 +1,198 @@
+<div class="app-title">
+  <div>
+    <h1><i class="bi bi-speedometer"></i> Dashboard</h1>
+    <p>A free and open source Bootstrap 5 admin template</p>
+  </div>
+  <ul class="app-breadcrumb breadcrumb">
+    <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
+    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+  </ul>
+</div>
+<div class="row">
+  <div class="col-md-6 col-lg-3">
+    <div class="widget-small primary coloured-icon"><i class="icon bi bi-people fs-1"></i>
+      <div class="info">
+        <h4>Users</h4>
+        <p><b>5</b></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-3">
+    <div class="widget-small info coloured-icon"><i class="icon bi bi-heart fs-1"></i>
+      <div class="info">
+        <h4>Likes</h4>
+        <p><b>25</b></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-3">
+    <div class="widget-small warning coloured-icon"><i class="icon bi bi-folder2 fs-1"></i>
+      <div class="info">
+        <h4>Uploades</h4>
+        <p><b>10</b></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-3">
+    <div class="widget-small danger coloured-icon"><i class="icon bi bi-star fs-1"></i>
+      <div class="info">
+        <h4>Stars</h4>
+        <p><b>500</b></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="tile">
+      <h3 class="tile-title">Monthly Sales</h3>
+      <div class="ratio ratio-16x9">
+        <canvas id="salesChart"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="tile">
+      <h3 class="tile-title">Support Requests</h3>
+      <div class="ratio ratio-16x9 d-flex justify-content-center">
+        <canvas id="supportRequestChart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Buttons-->
+    <div class="tile mb-4">
+      <div class="page-header">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="mb-3 line-head" id="buttons">Buttons</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-7">
+          <p class="bs-component">
+            <button class="btn btn-primary" type="button">Primary</button>
+            <button class="btn btn-secondary" type="button">Secondary</button>
+            <button class="btn btn-success" type="button">Success</button>
+            <button class="btn btn-info" type="button">Info</button>
+            <button class="btn btn-warning" type="button">Warning</button>
+            <button class="btn btn-danger" type="button">Danger</button>
+            <button class="btn btn-link" type="button">Link</button>
+          </p>
+          <p class="bs-component">
+            <button class="btn btn-primary" type="button" disabled="">Primary</button>
+            <button class="btn btn-secondary" type="button" disabled="">Secondary</button>
+            <button class="btn btn-success" type="button" disabled="">Success</button>
+            <button class="btn btn-info" type="button" disabled="">Info</button>
+            <button class="btn btn-warning" type="button" disabled="">Warning</button>
+            <button class="btn btn-danger" type="button" disabled="">Danger</button>
+            <button class="btn btn-link" type="button" disabled="">Link</button>
+          </p>
+          <p class="bs-component">
+            <button class="btn btn-outline-primary" type="button">Primary</button>
+            <button class="btn btn-outline-secondary" type="button">Secondary</button>
+            <button class="btn btn-outline-success" type="button">Success</button>
+            <button class="btn btn-outline-info" type="button">Info</button>
+            <button class="btn btn-outline-warning" type="button">Warning</button>
+            <button class="btn btn-outline-danger" type="button">Danger</button>
+          </p>
+          <div class="mb-3 bs-component">
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+              <button class="btn btn-primary" type="button">Primary</button>
+              <div class="btn-group" role="group">
+                <button class="btn btn-primary dropdown-toggle" id="btnGroupDrop1" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Dropdown link</a><a class="dropdown-item" href="#">Dropdown link</a></div>
+              </div>
+            </div>
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+              <button class="btn btn-success" type="button">Success</button>
+              <div class="btn-group" role="group">
+                <button class="btn btn-success dropdown-toggle" id="btnGroupDrop2" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Dropdown link</a><a class="dropdown-item" href="#">Dropdown link</a></div>
+              </div>
+            </div>
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+              <button class="btn btn-info" type="button">Info</button>
+              <div class="btn-group" role="group">
+                <button class="btn btn-info dropdown-toggle" id="btnGroupDrop3" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Dropdown link</a><a class="dropdown-item" href="#">Dropdown link</a></div>
+              </div>
+            </div>
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+              <button class="btn btn-danger" type="button">Danger</button>
+              <div class="btn-group" role="group">
+                <button class="btn btn-danger dropdown-toggle" id="btnGroupDrop4" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Dropdown link</a><a class="dropdown-item" href="#">Dropdown link</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="bs-component">
+            <button class="btn btn-primary btn-lg" type="button">Large button</button>
+            <button class="btn btn-primary" type="button">Default button</button>
+            <button class="btn btn-primary btn-sm" type="button">Small button</button>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <p class="bs-component d-grid">
+            <button class="btn btn-primary btn-lg btn-block" type="button">Block level button</button>
+          </p>
+          <div class="bs-component mb-3">
+            <div class="btn-group">
+              <input class="btn-check" id="btnCheck1" type="checkbox" checked="" autocomplete="off">
+              <label class="btn btn-primary" for="btnCheck1">Active</label>
+              <input class="btn-check" id="btnCheck2" type="checkbox" autocomplete="off">
+              <label class="btn btn-primary" for="btnCheck2">Check</label>
+              <input class="btn-check" id="btnCheck3" type="checkbox" autocomplete="off">
+              <label class="btn btn-primary" for="btnCheck3">Check</label>
+            </div>
+          </div>
+          <div class="bs-component mb-3">
+            <div class="btn-group">
+              <input class="btn-check" id="option1" type="radio" name="options" autocomplete="off" checked="">
+              <label class="btn btn-primary" for="option1">Active</label>
+              <input class="btn-check" id="option2" type="radio" name="options" autocomplete="off">
+              <label class="btn btn-primary" for="option2">Radio</label>
+              <input class="btn-check" id="option3" type="radio" name="options" autocomplete="off">
+              <label class="btn btn-primary" for="option3">Radio</label>
+            </div>
+          </div>
+          <div class="bs-component mb-3">
+            <div class="btn-group-vertical" data-bs-toggle="button">
+              <button class="btn btn-primary" type="button">Button</button>
+              <button class="btn btn-primary" type="button">Button</button>
+              <button class="btn btn-primary" type="button">Button</button>
+              <button class="btn btn-primary" type="button">Button</button>
+              <button class="btn btn-primary" type="button">Button</button>
+              <button class="btn btn-primary" type="button">Button</button>
+            </div>
+          </div>
+          <div class="bs-component mb-3">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button class="btn btn-secondary" type="button">Left</button>
+              <button class="btn btn-secondary" type="button">Middle</button>
+              <button class="btn btn-secondary" type="button">Right</button>
+            </div>
+          </div>
+          <div class="bs-component mb-3">
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+              <div class="btn-group me-2" role="group" aria-label="First group">
+                <button class="btn btn-secondary" type="button">1</button>
+                <button class="btn btn-secondary" type="button">2</button>
+                <button class="btn btn-secondary" type="button">3</button>
+                <button class="btn btn-secondary" type="button">4</button>
+              </div>
+              <div class="btn-group me-2" role="group" aria-label="Second group">
+                <button class="btn btn-secondary" type="button">5</button>
+                <button class="btn btn-secondary" type="button">6</button>
+                <button class="btn btn-secondary" type="button">7</button>
+              </div>
+              <div class="btn-group" role="group" aria-label="Third group">
+                <button class="btn btn-secondary" type="button">8</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

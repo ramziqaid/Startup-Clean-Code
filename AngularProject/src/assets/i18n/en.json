@@ -1,0 +1,11 @@
+{
+  "label":
+        {
+            "login": "SIGN IN",
+            "action":"Action",
+            "id":"Id",
+            "delete":"Delete",
+            "true":"true",
+            "false":"false"
+        }
+}

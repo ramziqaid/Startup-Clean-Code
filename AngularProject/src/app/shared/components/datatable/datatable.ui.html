@@ -1,0 +1,68 @@
+ 
+<table class="table table-hover table-bordered " id="sampleTable">
+  <thead>   
+    <tr>
+      <th *ngFor="let item of columns">{{ "label."+item.header | translate }} </th> 
+      <th > {{ "label.action" | translate }}</th> 
+    </tr>
+   </thead>
+
+   <tbody>
+     <tr *ngFor="let item of data; let i = index">           
+       <td *ngFor="let key of columns">
+        <ng-container [ngSwitch]="key.controlType">
+          <div *ngSwitchCase="'textBox'">  
+           <U-textbox  
+                id="id_{{ i }}"
+                name="name_{{ i }}" 
+                type="text" 
+                [value]="item[key.field]"
+                [disabled]="true"
+                >
+            </U-textbox> 
+          </div>
+          <div *ngSwitchCase="'checkBox'">  
+            <U-checkbox 
+               id="id_{{ i }}"
+              name="name_{{ i }}" 
+              [checked]="item[key.field]">
+              {{ "label."+item[key.field] | translate }} 
+            </U-checkbox>
+           
+          </div>
+          <div *ngSwitchDefault> 
+            {{item[key.field]}}
+          </div>
+         
+        </ng-container>
+         
+        </td>
+       <td>
+        <U-button  type="button" (onClick)="editAction(item)" 
+          [color]="'primary'">
+            {{ "label.edit" | translate }}
+        </U-button>  
+        <U-button  type="button" (onClick)="deleteAction(item)" 
+          [color]="'success'">
+            {{ "label.delete" | translate }}
+        </U-button>  
+      </td> 
+     </tr> 
+   </tbody>
+ </table> 
+ 
+<!-- 
+ <div class="card">
+  <div class="header">
+    <ng-content select="[columns]" >
+
+    </ng-content>
+  </div> 
+    <ng-content select="[body]" >
+
+    </ng-content> 
+  <div class="footer">
+    <ng-content select="footer" ></ng-content>
+  </div>
+  </div>
+          -->

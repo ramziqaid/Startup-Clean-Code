@@ -1,0 +1,17 @@
+<button [class]="class"
+        [name]="name"
+        [type]="type"
+        (click)="clickEvent()"
+        *ngIf="!hidden"
+        [attr.disabled]="disabled?'':null"
+        [class.btn]="true"
+        [class.btn-default]="default"
+        [class.btn-primary]="primary"
+        [class.btn-warning]="warning"
+        [class.btn-success]="success"
+        [class.btn-danger]="danger"
+        [class.btn-metal]="metal"
+        [class.btn-brand]="brand"
+        [class.btn-focus]="focus">
+  <ng-content></ng-content>
+</button> 

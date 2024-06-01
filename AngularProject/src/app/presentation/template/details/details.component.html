@@ -1,0 +1,39 @@
+<form #userForm="ngForm" (ngSubmit)="onSubmit()"> 
+
+  <div class="row"> 
+ <div class="col-6">
+   <U-label name="name">Name:</U-label>
+   <U-textbox  id="name" name="name" type="text" [(value)]="temp.name" [required]="true" >
+   </U-textbox>
+ </div>
+ <div class="col-6">
+   <U-label name="logo">logo:</U-label>
+   <U-textbox  id="logo" name="logo" type="text" [(value)]="temp.logo"  [required]="true">
+   </U-textbox>
+ </div>
+ <div class="col-6">
+   <U-label name="isPublished">isPublished:</U-label>
+   <U-checkbox name="all" [(checked)]="temp.isPublished">
+     {{ 'isPublished' | translate }}
+   </U-checkbox>
+ </div>
+ <div class="col-6">
+   <U-label name="slug">slug:</U-label>
+   <U-textbox  id="slug" name="slug" type="text" [(value)]="temp.slug" [required]="true" >
+   </U-textbox>
+ </div>
+ <div class="col-6">
+   <U-label name="slug">file:</U-label>
+   <U-button  type="button" (onClick)="download(temp.logo)" > 
+    {{ 'download' | translate }}
+   </U-button> 
+ </div>
+
+</div>
+<U-button  type="submit" [disabled]="userForm.invalid">
+ <!--(click)="signin()"-->
+ {{ 'SHD_SIGN_IN' | translate }}
+</U-button> 
+</form>
+{{userForm.valid}}
+{{temp | json}}
