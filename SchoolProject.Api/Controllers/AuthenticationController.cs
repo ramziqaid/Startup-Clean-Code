@@ -3,6 +3,7 @@ using SchoolProject.Api.Base;
 using SchoolProject.Core.Features.Authentication.Commands.Models;
 using SchoolProject.Core.Features.Authentication.Queries.Models;
 using SchoolProject.Data.AppMetaData;
+using SchoolProject.Data.Results;
 
 namespace SchoolProject.Api.Controllers
 {
@@ -16,6 +17,8 @@ namespace SchoolProject.Api.Controllers
         public async Task<IActionResult> Create([FromForm] SignInCommand command)
         {
             var response = await Mediator.Send(command);
+            SetTokensInsideCookie(response.Data, HttpContext);
+
             return NewResult(response);
         }
 
@@ -55,5 +58,29 @@ namespace SchoolProject.Api.Controllers
             var response = await Mediator.Send(command);
             return NewResult(response);
         }
+
+        private void SetTokensInsideCookie(JwtAuthResult tokenDto, HttpContext context)
+        {
+            context.Response.Cookies.Append("accessToken", tokenDto.AccessToken,
+                new CookieOptions
+                {
+                    Expires = DateTimeOffset.UtcNow.AddMinutes(5),
+                    HttpOnly = true,
+                    IsEssential = true,
+                    Secure = true,
+                    SameSite = SameSiteMode.None
+                });
+
+            context.Response.Cookies.Append("refreshToken", tokenDto.refreshToken.TokenString,
+                new CookieOptions
+                {
+                    Expires = DateTimeOffset.UtcNow.AddDays(7),
+                    HttpOnly = true,
+                    IsEssential = true,
+                    Secure = true,
+                    SameSite = SameSiteMode.None
+                });
+        }
     }
+    
 }

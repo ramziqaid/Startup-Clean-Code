@@ -13,8 +13,8 @@ namespace SchoolProject.Api.Controllers
     public class StudentController : AppControllerBase
     {
         [HttpGet(Router.StudentRouting.List)]
-        [Authorize(Roles = "User")]
-        [ServiceFilter(typeof(AuthFilter))]
+        [Authorize(Roles = "Admin")]
+        //[ServiceFilter(typeof(AuthFilter))]
         public async Task<IActionResult> GetStudentList()
         {
             var response = await Mediator.Send(new GetStudentListQuery());

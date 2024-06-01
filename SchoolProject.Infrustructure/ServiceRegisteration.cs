@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -81,7 +82,17 @@ namespace SchoolProject.Infrustructure
                    ValidateAudience = jwtSettings.ValidateAudience,
                    ValidateLifetime = jwtSettings.ValidateLifeTime,
                };
-           });
+               x.Events = new JwtBearerEvents
+               {
+                   OnMessageReceived = ctx =>
+                   {
+                       ctx.Request.Cookies.TryGetValue("accessToken", out var accessToken);
+                       if (!string.IsNullOrEmpty(accessToken))
+                           ctx.Token = accessToken; 
+                       return Task.CompletedTask;
+                   }
+               };
+           } );
 
 
             //Swagger Gn

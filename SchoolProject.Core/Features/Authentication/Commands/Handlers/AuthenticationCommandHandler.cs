@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Localization;
 using SchoolProject.Core.Bases;
@@ -58,11 +59,11 @@ namespace SchoolProject.Core.Features.Authentication.Commands.Handlers
                 return BadRequest<JwtAuthResult>(_stringLocalizer[SharedResourcesKeys.EmailNotConfirmed]);
             //Generate Token
             var result = await _authenticationService.GetJWTToken(user);
+
             //return Token 
             return Success(result);
         }
-
-        public async Task<Response<JwtAuthResult>> Handle(RefreshTokenCommand request, CancellationToken cancellationToken)
+         public async Task<Response<JwtAuthResult>> Handle(RefreshTokenCommand request, CancellationToken cancellationToken)
         {
             var jwtToken = _authenticationService.ReadJWTToken(request.AccessToken);
             var userIdAndExpireDate = await _authenticationService.ValidateDetails(jwtToken, request.AccessToken, request.RefreshToken);
