@@ -15,8 +15,8 @@ export class TemplateListComponent extends BaseComponent implements OnInit {
   enums = BaseComponent.enums;
 
   dataModel: string = 'ali';
-  cols:string[]=['id','slug','name','isPublished'];
-  data:Array<TemplateEntity>;
+  cols: string[] = ['id', 'slug', 'name', 'isPublished'];
+  data: Array<TemplateEntity>;
   allApplicationSelected: boolean = true;
   showNew: boolean = true;
   showEdit: boolean = true;
@@ -31,60 +31,61 @@ export class TemplateListComponent extends BaseComponent implements OnInit {
     { field: 'isPublished', header: 'isPublished', controlType: 'checkBox', dataType: 'textBox', required: true, unique: true },
 
   ];
-  constructor(private router: Router,private interactor: ITemplateInteractor) {
+  constructor(private router: Router, private interactor: ITemplateInteractor) {
     super();
-   }
+  }
 
   ngOnInit() {
     try {
+      debugger
       this.interactor.getAll().subscribe({
         next: (response) => {
-        this.data=response.data;
+          this.data = response.data;
         }
         ,
         error: () => {
           debugger
           //this.messageService.showError('message.unhandledError');
         },
-       });
+      });
     } catch (error) {
       debugger
     }
-   
+
   }
 
-show(){
-  //this.messageService.showSuccess( "tewerwerwe re",'fasfdafh');
-   
-  this.appConfirm.show({
-    text: 'message.confirmDelete',
-    title: 'label.alert',
-    buttonType: [this.enums.ConfirmButtonType.Yes, this.enums.ConfirmButtonType.No],
-    fun: [() => {
-      this.messageService.showSuccess("message.unhandledError");
-      // this.announcementService.DeleteAnnouncement(id).subscribe({
-      //   next: (response) => 
-      //   {
-      //     if (response.isSuccess) {
-      //       this.messageService.showSuccess('message.deletedSuccessfully');
-      //      // this.search();
+  show() {
+    //this.messageService.showSuccess( "tewerwerwe re",'fasfdafh');
 
-      //     } else {
-      //       this.messageService.showErrorMessage(response);
-      //     }
-      //   }
-      //   ,
-      //   error: () => {
-      //     this.messageService.showError("message.unhandledError");
-      //   },
-      // });
-    },
-    () => {
-      this.messageService.showError("message.unhandledError");
-    }]
-  });
-}
-  
+    this.appConfirm.show({
+      text: 'message.confirmDelete',
+      title: 'label.alert',
+      buttonType: [this.enums.ConfirmButtonType.Yes, this.enums.ConfirmButtonType.No],
+      fun: [() => {
+        this.messageService.showSuccess("message.unhandledError");
+        // this.announcementService.DeleteAnnouncement(id).subscribe({
+        //   next: (response) => 
+        //   {
+        //     if (response.isSuccess) {
+        //       this.messageService.showSuccess('message.deletedSuccessfully');
+        //      // this.search();
+
+        //     } else {
+        //       this.messageService.showErrorMessage(response);
+        //     }
+        //   }
+        //   ,
+        //   error: () => {
+        //     this.messageService.showError("message.unhandledError");
+        //   },
+        // });
+      },
+      () => {
+        this.messageService.showError("message.unhandledError");
+      }]
+    });
+  }
+
   //#region "actionBar"
 
   newClick() {
@@ -92,41 +93,41 @@ show(){
     this.router.navigate([path])
   }
 
- 
+
   edit() {
-    
+
   }
 
 
   save() {
- 
+
   }
 
-  delete( ) { 
+  delete() {
   }
 
-  onEditAction(data:any){
+  onEditAction(data: any) {
     let path: string = "home/template/edit/";
-    this.router.navigate([path,data.id])
+    this.router.navigate([path, data.id])
   }
 
-  onDeleteAction(data:any) {
+  onDeleteAction(data: any) {
     this.interactor.delete(data.id).subscribe({
       next: (response) => {
         if (response.succeeded) {
           console.warn("delete");
-                 }
+        }
       },
       error: () => {
         //this.messageService.showError('message.unhandledError');
       },
-    }); 
+    });
   }
 
- 
+
 
   reset() {
- 
+
   }
   //#endregion
 }

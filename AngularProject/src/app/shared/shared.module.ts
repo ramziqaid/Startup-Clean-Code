@@ -1,5 +1,5 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { BlockCopyPasteDirective } from './directives/block-copy-paste.directive';
 import { UIComponentModule } from './components/ui-component.module';
@@ -11,32 +11,44 @@ import { MessagesService } from './services/messages.service';
 import { AppConfirmService } from './services/app-confirm.service';
 import { SafePipe } from './pipes/safe.pipe';
 import { FileManagerService } from './services/fileManager.service';
- 
+import { ButtonModule } from 'primeng/button';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { ToggleButtonModule } from 'primeng/togglebutton';
+import { CalendarModule } from 'primeng/calendar';
+
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
     UIComponentModule,
-    TranslateModule,  
+    TranslateModule,
+    ButtonModule,
+    ToggleButtonModule,
+    MultiSelectModule,
+    CalendarModule,
   ],
-  declarations:[
-    BlockCopyPasteDirective,  
+  declarations: [
+    BlockCopyPasteDirective,
     SafePipe,
   ],
-  providers:[
-    TokenService,  
-    AuthGuard, 
+  providers: [
+    TokenService,
+    AuthGuard,
     MessagesService,
     AppConfirmService,
     FileManagerService,
-    ...DATA_Account_IOC, 
-     
+    ...DATA_Account_IOC,
+
   ],
-  exports:[
+  exports: [
     UIComponentModule,
     BlockCopyPasteDirective,
     TranslateModule,
-    SafePipe, 
+    ButtonModule,
+    ToggleButtonModule,
+    MultiSelectModule,
+    CalendarModule,
+    SafePipe,
   ]
 })
 export class SharedModule { }
