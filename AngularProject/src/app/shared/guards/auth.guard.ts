@@ -25,6 +25,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
         var access = await this.validToken(token.accessToken);
         if (!access) {
+            debugger
             this.router.navigate(['/login']);
         }
         return access;
@@ -36,6 +37,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
         var access = await this.validToken(token.accessToken);
         if (!access) {
+            debugger
             this.router.navigate(['/login']);
         }
         return access;

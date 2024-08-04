@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CustomHttpClient } from 'src/app/core/services/customHttp.service';
-import { fileManagerRoot } from '../enums/api-urls.enum';
+import { fileManagerRoot } from '../../features/fea1/api-urls.enum';
 import * as mime from 'mime-db';
 import { HttpEventType } from '@angular/common/http';
 
@@ -8,8 +8,8 @@ import { HttpEventType } from '@angular/common/http';
   providedIn: 'root'
 })
 export class FileManagerService {
- 
-constructor(private http: CustomHttpClient) {}
+
+  constructor(private http: CustomHttpClient) { }
 
   uploadFile(file: File) {
     const formData: FormData = new FormData();
@@ -17,16 +17,16 @@ constructor(private http: CustomHttpClient) {}
     return this.http.post<any>(fileManagerRoot.Upload, formData);
   }
 
-  downloadFile(apiRoot: string, fileName: string): void { 
+  downloadFile(apiRoot: string, fileName: string): void {
     this.http.downLoadFile(`${apiRoot}/Download/${fileName}`).subscribe(
       {
-        next: (response: any) => {  
+        next: (response: any) => {
           let dataType = response.type;
           let binaryData = [];
           binaryData.push(response);
           let downloadLink = document.createElement('a');
           downloadLink.href = window.URL.createObjectURL(new Blob(binaryData, { type: dataType }));
-          var fullFileName = fileName; 
+          var fullFileName = fileName;
           var fileType = mime[dataType]?.extensions;
           if (fileType != undefined)
             fullFileName = `${fileName}.${fileType[0]}`;

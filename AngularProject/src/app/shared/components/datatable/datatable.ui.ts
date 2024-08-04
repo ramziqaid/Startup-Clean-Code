@@ -6,22 +6,22 @@ import { ControlContainer, NG_VALUE_ACCESSOR, NgForm } from '@angular/forms';
   templateUrl: './datatable.ui.html',
   styleUrls: ['./datatable.ui.css'],
   viewProviders: [{ provide: ControlContainer, useExisting: NgForm }],
-    providers: [
-      {
-        provide: NG_VALUE_ACCESSOR,
-        useExisting: forwardRef(() => DatatableUI),
-        multi: true
-      }
-    ]
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => DatatableUI),
+      multi: true
+    }
+  ]
 })
 export class DatatableUI implements OnInit {
   @ContentChild('tmpl') tmplRef: TemplateRef<any>;
   @ContentChild('tmpl2') tmplRef2: TemplateRef<any>;
-  
-  //@Input()  columns: string[]=[];
-  @Input()  data: any[]=[];
-  @Input()  canEdit: boolean=false;
-  @Input()  canDelete: boolean=false;
+
+  //@Input() columns: string[] = [];
+  @Input() data: any[] = [];
+  @Input() canEdit: boolean = false;
+  @Input() canDelete: boolean = false;
   @Input() columns: DataTableColumn[];
 
   @Output() onEditAction = new EventEmitter<any>();
@@ -30,18 +30,18 @@ export class DatatableUI implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
+
   }
 
-  editAction(row:any){ 
+  editAction(row: any) {
     this.onEditAction.emit(row);
   }
-  
-  deleteAction(row:any){  
+
+  deleteAction(row: any) {
     this.onDeleteAction.emit(row);
   }
 }
- 
+
 
 
 export interface DataTableColumn {

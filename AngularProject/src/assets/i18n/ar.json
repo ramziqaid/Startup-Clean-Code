@@ -1,13 +1,11 @@
 {
-    "label":
-          {
-              "login": "دخول",
-              "action":"اجراء",
-              "id":"رقم",
-              "delete":"حذف",
-              "true":"نعم",
-              "false":"لا"
-          }
+    "label": {
+        "login": "دخول",
+        "action": "اجراء",
+        "id": "رقم",
+        "delete": "حذف",
+        "true": "نعم",
+        "false": "لا"
+    },
+    "common": {}
 }
-
-  

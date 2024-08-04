@@ -19,13 +19,13 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "strictPropertyInitialization":false,
+    "strictPropertyInitialization": false,
     "lib": [
       "ES2022",
       "dom"
     ],
     "resolveJsonModule": true,
-    "esModuleInterop": true, 
+    "esModuleInterop": true,
     "paths": {
       "@hasib/*": [
         "app/shared/app/*"
@@ -36,6 +36,7 @@
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictTemplates": true,
+    "enableIvy": false
   }
 }

@@ -1,0 +1,19 @@
+<section class="main_content">
+    <div class="row">
+        <div class="col-md-3">
+            <app-side-bar (contentChange)="onContentChange($event)"></app-side-bar>
+        </div>
+        <div class="col-md-9 ">
+            <div class="content">
+
+                <app-content-bar [title]="title" [breadCrumb]="breadCrumb"></app-content-bar>
+                <div class="tabs-container">
+                    <router-outlet></router-outlet>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</section>

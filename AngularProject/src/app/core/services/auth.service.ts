@@ -8,43 +8,40 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-constructor(  private cryptoService: CryptoService,private router: Router) { }
+  constructor(private cryptoService: CryptoService, private router: Router) { }
 
-setUserProfile(accountModel: AccountEntity | null) 
-{
-  sessionStorage.setItem("setUserProfile", this.cryptoService.encryptData(accountModel));
-  if (accountModel != null)
+  setUserProfile(accountModel: AccountEntity | null) {
+    sessionStorage.setItem("setUserProfile", this.cryptoService.encryptData(accountModel));
+    if (accountModel != null)
       sessionStorage.setItem("ULI", JSON.stringify(true));
-}
-
-getUserProfile()  
-{ 
-  var data = this.cryptoService.decryptData(sessionStorage.getItem("setUserProfile")!);
-  if (data != null) {
-      return JSON.parse(data);
   }
-  return null;
-}
 
-getLoggedInUserName(): string 
-{ 
-  let accModel: AccountEntity;
-  accModel = this.getUserProfile();
-  return accModel.username;
-}
-
-isUserLoggedIn():boolean {
-  var data = sessionStorage.getItem('ULI');
-  if (data != null)
+  getUserProfile() {
+    var data = this.cryptoService.decryptData(sessionStorage.getItem("setUserProfile")!);
+    if (data != null) {
       return JSON.parse(data);
-  return false;
-}
+    }
+    return null;
+  }
 
- 
+  getLoggedInUserName(): string {
+    let accModel: AccountEntity;
+    accModel = this.getUserProfile();
+    return accModel.username;
+  }
 
-logout() {
-  sessionStorage.clear()
-  sessionStorage.setItem("ULI", JSON.stringify(false));
-  this.router.navigate(['login']);
-}
+  isUserLoggedIn(): boolean {
+    var data = sessionStorage.getItem('ULI');
+    if (data != null)
+      return JSON.parse(data);
+    return false;
+  }
+
+
+
+  logout() {
+    sessionStorage.clear()
+    sessionStorage.setItem("ULI", JSON.stringify(false));
+    this.router.navigate(['login']);
+  }
 }

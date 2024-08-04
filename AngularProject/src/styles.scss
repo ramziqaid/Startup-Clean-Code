@@ -1,0 +1,112 @@
+/* You can add global styles to this file, and also import other style files */
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+//@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+//@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+// $FullService_app-primary: mat.define-palette(mat.$indigo-palette);
+// $FullService_app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// // The warn palette is optional (defaults to red).
+// $FullService_app-warn: mat.define-palette(mat.$red-palette);
+
+// // Create the theme object. A theme consists of configurations for individual
+// // theming systems such as "color" or "typography".
+// $FullService_app-theme: mat.define-light-theme((color: (primary: $FullService_app-primary,
+//                 accent: $FullService_app-accent,
+//                 warn: $FullService_app-warn,
+//             ),
+//             typography: mat.define-typography-config(),
+//             density: 0));
+
+// // Include theme styles for core and each component used in your app.
+// // Alternatively, you can import and @include the theme mixins for each component
+// // that you are using.
+// @include mat.all-component-themes($FullService_app-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+@import url(https://db.onlinewebfonts.com/c/aba1a083bf50980a05f0265179103a09?family=DIN+Next+LT+Arabic+Medium);
+@import url(https://db.onlinewebfonts.com/c/d78f5d2c76185fa07aaf8dd729eef33e?family=DIN+Next+LT+Arabic+Light);
+@import url(https://db.onlinewebfonts.com/c/513071b47bdba774c93a73ad16a75e3b?family=DIN+Next+LT+Arabic+Bold);
+
+* {
+    font-family: "DIN Next LT Arabic Light";
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    // font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-image: url('./assets/images/header.svg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-color: #f5f4f3 !important;
+}
+
+
+
+/* Sidebar & Content */
+
+.col-md-9 {
+    padding: 0 !important;
+}
+
+@media (max-width:1200px) {
+    .text_content {
+        width: 100% !important;
+    }
+}
+
+.col-md-3 {
+    width: 23% !important;
+}
+
+.main_content {
+    min-height: 700px;
+    background-color: transparent;
+    padding: 20px;
+}
+
+.heading {
+    width: 100%;
+    background-color: #dddddd38;
+    text-align: right;
+    padding: 20px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.heading h1 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #25343f;
+}
+
+.heading p {
+    font-size: 14px;
+    color: #818181;
+}
+
+.invalid-feedback {
+    color: red !important;
+    display: contents;
+}
+
+
+.p-multiselect {
+    width: 100% !important;
+}

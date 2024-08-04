@@ -1,0 +1,263 @@
+* {
+  font-weight: 600;
+}
+
+.col-md-9 {
+  padding: 0 !important;
+}
+
+.sidebar {
+  background: #fff;
+  min-height: 700px;
+  padding: 10px;
+  border-radius: 10px;
+  // box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.1);
+  gap: 20px;
+  padding-left: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+
+
+}
+
+.btn-menue {
+  display: none;
+}
+
+.btn-log {
+  background-color: #bb9661;
+  width: 90%;
+  margin: 10px auto;
+  height: 60px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  padding: 0;
+  align-items: center;
+}
+
+.accordion-button::after {
+  position: absolute;
+  left: 0;
+  margin-left: 40px;
+}
+
+.accordion-item:first-of-type .accordion-button {
+  border-radius: 10px;
+}
+
+.btn-log img {
+  width: 85px;
+  background-color: #a38255;
+  padding: 10px 20px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.btn-log span {
+  color: #fff;
+  text-align: center;
+  width: 100%;
+}
+
+.accordion .accordion-item {
+  border: none;
+}
+
+.accordion-button {
+  gap: 20px;
+  display: flex;
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 #0000;
+}
+
+.accordion-button:not(.collapsed) {
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #FAFBFC;
+  color: #25343F;
+}
+
+.accordion ul li a {
+  text-decoration: none;
+  color: #858585;
+}
+
+.active {
+  background-color: #F7FAFF;
+}
+
+.accordion ul {
+  list-style: none;
+  padding: unset;
+}
+
+.accordion-body {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.accordion ul li {
+  transition: all 0.3s ease-in-out;
+  padding: 14px 40px;
+}
+
+.accordion ul li:hover {
+  background-color: #F7FAFF;
+  border-radius: 10px;
+}
+
+
+
+.accordion ul li a:hover {
+  color: #25343F;
+}
+
+hr {
+  border-left: 6px solid #C7CDD5;
+  opacity: 0.05;
+  margin: 20px 20px;
+}
+
+@media (max-width:1200px) {
+  .sidebar.opensidebar {
+    position: absolute;
+    transform: translateX(0px) !important;
+  }
+
+  .sidebar {
+    position: absolute;
+    right: 0px;
+    transform: translateX(100%) !important;
+  }
+
+  .btn-menue {
+    display: block;
+    padding: 20px 20px;
+  }
+
+  .sBtn-tex {
+    margin-left: 28px;
+  }
+
+
+}
+
+@media (max-width:750px) {
+  .sidebar {
+    width: 60%;
+  }
+}
+
+
+.select-menu {
+  width: 96%;
+  // width:290px;
+  // margin: 140px auto;
+  // text-align: right;
+  // align-items: right;
+}
+
+.select-menu img {
+  margin-left: 20px;
+}
+
+.select-menu .data {
+  margin-left: 80px;
+}
+
+.bx-chevron-down:before {
+  position: flex;
+  margin-left: 0;
+}
+
+.select-menu span {
+  display: block;
+}
+
+.select-menu .select-btn {
+  display: flex;
+  height: 100px;
+  background: #FAFAFA;
+  padding: 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.select-btn svg {
+  font-size: 25px;
+  transition: 0.3s;
+}
+
+.select-menu.active .select-btn svg {
+  transform: rotate(-180deg);
+}
+
+.select-menu .options {
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.select-menu.active .options {
+  display: block;
+}
+
+.options .option {
+  display: flex;
+  height: 55px;
+  cursor: pointer;
+  padding: 0 16px;
+  border-radius: 8px;
+  align-items: center;
+  background: #fff;
+}
+
+.options .option:hover {
+  background: #F2F2F2;
+}
+
+.option i {
+  font-size: 25px;
+  margin-right: 12px;
+}
+
+.option .option-text {
+  font-size: 16px;
+}
+
+.option .profile {
+  color: #25343F;
+}
+
+.option .logout {
+  color: #AC3737;
+}
+
+.options .option:hover {
+  color: #BB9661;
+  background: #f7f7f7;
+  font-family: "DIN Next LT Arabic Bold";
+}
+
+.options a {
+  text-decoration: none;
+}
+
+.options hr {
+  border-bottom: 0.5px solid #c7cdd550;
+  margin: 20px;
+}

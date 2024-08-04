@@ -1,0 +1,94 @@
+<header>
+  <div class="header">
+    <div class="top-header container">
+      <div class="header-logo">
+        <div class="image-container">
+
+          <a (click)="togglesidebar()" style="width: 14%;">
+            <img src="assets/images/menu.png" />
+          </a>
+
+          <img src="assets/svg/Alharamain.svg" alt="Logo" class="margin">
+          <div class="vl"></div>
+          <img src="assets/svg/vision.svg" alt="Vision" class="vision">
+        </div>
+      </div>
+      <div class="header-actions margin-left-auto">
+
+
+        <div class="current-date headerDiv"><img src="assets/svg/calendar.svg" alt="Calendar">{{ gregorianDate }} |
+          {{hijriDateString }} </div>
+        <div class="settings headerDiv" (click)="toggleSettings()"
+          [style.background-color]="!showSettings ? '#ededed0d' : '#ededed !important'">
+          <img [src]="!showSettings ? 'assets/svg/settings-white.svg' : 'assets/svg/settings-dark.svg'" alt="Settings">
+        </div>
+
+        <div class="settings-popup" *ngIf="showSettings">
+          <div class="font-container">
+            <div class="font-text">
+              الخط
+            </div>
+            <div class="font-size">
+              <div class="dec-font settings-style" (click)="decreaseFontSize()">
+                -
+              </div>
+              <div class="perc-font settings-style-num">
+                {{ fontSize }}%
+              </div>
+              <div class="inc-font settings-style" (click)="increaseFontSize()">
+                +
+              </div>
+            </div>
+          </div>
+          <div class="language-container">
+            <div class="language-text">
+              اللغة
+            </div>
+            <div class="language-div">
+              <div class="en-language settings-div" (click)="changeLanguage('ar')">
+                Urdu
+              </div>
+              <div class="ar-language settings-div" (click)="changeLanguage('en')">
+                English
+              </div>
+            </div>
+          </div>
+          <div class="color-container">
+            <div class="color-text">
+              اللون
+            </div>
+            <div class="color-div">
+              <div class="color-font settings-div">
+                رمادي
+              </div>
+              <div class="color-font settings-div">
+                داكن
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="notifications headerDiv" (click)="toggleNotification()"
+          [style.background-color]="!showNotification ? '#ededed0d' : '#ededed !important'">
+          <img [src]="!showNotification ? 'assets/svg/notifications-white.svg' : 'assets/svg/notifications-dark.svg'"
+            alt="Notifications">
+        </div>
+        <div class="notification-popup" *ngIf="showNotification">
+          <div class="notification-container" *ngFor="let notification of notifications">
+            <!-- <div class="notification-title" [class.read]="notification.read" (click)="markAsRead(notification.id)">
+              {{ notification.title }}
+            </div> -->
+            <div class="notification-message">
+              notification.message
+            </div>
+            <div class="notification-time">
+              <span>منذ</span>
+              notification.time
+            </div>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,75 +1,71 @@
-import { APP_INITIALIZER, Injector, NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER, Injector } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-//import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-//import { LoginComponent } from './core/login/login.component';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { AppRoutingModule } from './app-routing.module';
-import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing';
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { AppSettingsService, appInitializerFactory } from './core/services/app-settings.service';
-import { AppInjector } from './shared/services/app-injector.service';
-import { ConfirmDialogComponent } from './shared/components/confirm-dialog/confirm-dialog.component';
+import { AppSettingsService } from './core/services/app-settings.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { LOCATION_INITIALIZED } from '@angular/common';
+import { SharedModule } from './shared/shared.module';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
-@NgModule({
+export function appInitializerFactory(appSettingsService: AppSettingsService) {
+  return () => appSettingsService.initialize();
+}
 
+export function translationInitializerFactory(translate: TranslateService, injector: Injector) {
+  return () => new Promise<any>((resolve: any) => {
+    const locationInitialized = injector.get(LOCATION_INITIALIZED, Promise.resolve(null));
+    locationInitialized.then(() => {
+      const langToSet = 'en';
+      translate.setDefaultLang(langToSet);
+      translate.use(langToSet).subscribe(() => {
+        resolve(null);
+      });
+    });
+  });
+}
+
+@NgModule({
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: appInitializerFactory,
+      deps: [AppSettingsService],
+      multi: true
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: translationInitializerFactory,
+      deps: [TranslateService, Injector],
+      multi: true
+    }
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CoreModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    //SharedModule, 
-    //RouterModule.forRoot(rootRouterConfig, { useHash: false, relativeLinkResolution: 'legacy' }),
+    SharedModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: (createTranslateLoader),
+        useFactory: createTranslateLoader,
         deps: [HttpClient]
       }
-    })
+    }),
+
   ],
   declarations: [
     AppComponent,
-    //LoginComponent,
-    //AuthLayoutComponent, 
-    //AdminLayoutComponent,
-    // NavbarComponent,
-    // HeaderComponent,  
-
-  ],
-
-  providers: [
-    {
-      provide: LocationStrategy,
-      useClass: HashLocationStrategy
-    },
-    {
-      provide: APP_INITIALIZER,
-      useFactory: appInitializerFactory,
-      deps: [TranslateService, Injector],
-      multi: true
-    },
-    {
-      provide: APP_INITIALIZER,
-      useFactory: (appSettings: AppSettingsService) => () => appSettings.initialize(),
-      deps: [AppSettingsService],
-      multi: true
-    },
-
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-  constructor(injector: Injector) {
-    AppInjector.setInjector(injector);
-  }
-}
+export class AppModule { }

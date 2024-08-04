@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "Tajawal", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.col-md-9 {
+    padding: 0 !important;
+}
+
+.conatiner {
+    max-width: 90%;
+    margin: auto;
+}
+
+.main_content {
+    min-height: 700px;
+    background-color: transparent;
+    padding: 20px;
+}
+
+.allcontent {
+    gap: 10px;
+}
+
+.links,
+.text_content {
+    background: #fff;
+    // min-height: 700px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.2);
+}
+
+p {
+    margin: 0;
+}
+
+.links {
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-menue {
+    display: none;
+}
+
+.btn-log {
+    background-color: #bb9661;
+    width: 90%;
+    margin: 10px auto;
+    height: 60px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    display: flex;
+    padding: 0;
+    align-items: center;
+}
+
+.accordion-button::after {
+    position: absolute;
+    left: 0;
+    margin-left: 30px;
+}
+
+.accordion-item:first-of-type .accordion-button {
+    border-radius: 10px;
+}
+
+.btn-log img {
+    width: 85px;
+    background-color: #a38255;
+    padding: 10px 20px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.btn-log span {
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    font-weight: 500;
+}
+
+.accordion .accordion-item {
+    border: none;
+}
+
+.accordion-button {
+    gap: 20px;
+    display: flex;
+    font-weight: 500;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 #0000;
+}
+
+.accordion-button:not(.collapsed) {
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #F7FAFF;
+    color: #25343F;
+}
+
+.accordion ul {
+    list-style: none;
+    padding: unset;
+}
+
+.accordion-body {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.accordion ul li {
+    transition: all 0.3s ease-in-out;
+    padding: 14px 40px;
+}
+
+.accordion ul li:hover {
+    background-color: #F7FAFF;
+    border-radius: 10px;
+}
+
+.accordion ul li a {
+    text-decoration: none;
+    color: #858585;
+}
+
+.accordion ul li a:hover {
+    color: #25343F;
+}
+
+.vl {
+    border-left: 6px solid #fff;
+    opacity: 0.05;
+    height: 64px;
+    border-radius: 99px;
+}
+
+hr {
+    border-left: 6px solid #C7CDD5;
+    opacity: 0.05;
+}
+
+.text_content {
+    width: 74%;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.heading {
+    width: 100%;
+    background-color: #dddddd38;
+    text-align: right;
+    padding: 20px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.heading h1 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #25343f;
+}
+
+.heading p {
+    font-size: 14px;
+    color: #818181;
+}
+
+@media (max-width:1200px) {
+    .links.openlinks {
+        position: absolute;
+        transform: translateX(0px) !important;
+    }
+
+    .links {
+        position: absolute;
+        right: 0px;
+        transform: translateX(100%) !important;
+    }
+
+    .text_content {
+        width: 100% !important;
+    }
+
+    .btn-menue {
+        display: block;
+        padding: 20px 20px;
+    }
+}
+
+@media (max-width:750px) {
+    .links {
+        width: 60%;
+    }
+}
