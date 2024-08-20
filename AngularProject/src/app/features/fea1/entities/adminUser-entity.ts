@@ -1,11 +1,9 @@
-import { BaseEntity } from "src/app/domain/entities/baseEntity"
+import { BaseEntity } from "src/app/entities/baseEntity"
 
-export interface AdminUserEntity extends  BaseEntity<number>
-{
-name: string
-username: string
-email: string
-phone: string
-website: string
+export interface AdminUserEntity extends BaseEntity<number> {
+    name: string
+    username: string
+    email: string
+    phone: string
+    website: string
 }
- 

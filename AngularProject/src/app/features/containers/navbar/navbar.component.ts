@@ -2,7 +2,7 @@ import { Component, ViewChild, ElementRef, Output, EventEmitter, Renderer2 } fro
 
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/core/services/auth.service';
-import { AccountEntity } from 'src/app/domain/entities/account.entity';
+import { AccountEntity } from 'src/app/entities/account.entity';
 
 
 

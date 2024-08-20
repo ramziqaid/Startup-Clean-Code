@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CryptoService } from './crypto.service';
-import { AccountEntity } from 'src/app/domain/entities/account.entity';
+import { AccountEntity } from 'src/app/entities/account.entity';
 import { Router } from '@angular/router';
 
 @Injectable({

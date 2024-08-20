@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { TenantsService } from 'src/app/core/services/tenants.service';
 import { UserService } from 'src/app/core/services/user.service';
-import { AccountEntity } from 'src/app/domain/entities/account.entity';
+import { AccountEntity } from 'src/app/entities/account.entity';
 
 @Component({
   selector: 'app-login',

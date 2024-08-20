@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { CustomHttpClient } from 'src/app/core/services/customHttp.service';
 import { ApiResponseModel } from 'src/app/core/models/api-response.model';
-import { AccountEntity } from 'src/app/domain/entities/account.entity';
+import { AccountEntity } from 'src/app/entities/account.entity';
 import { AppSettingsService } from './app-settings.service';
 
 @Injectable({
