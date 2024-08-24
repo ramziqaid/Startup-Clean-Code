@@ -96,8 +96,8 @@ export class HeaderComponent extends BaseComponent implements OnInit {
   }
   ngOnInit() {
     //this.translate.setDefaultLang('ar'); 
-    if (!this.isUserLoggedIn())
-      this.logout();
+    // if (!this.isUserLoggedIn())
+    //   this.logout();
   }
   changeTheme() {
     if (this.class) {

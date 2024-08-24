@@ -1,4 +1,4 @@
-import { NgModule, APP_INITIALIZER, Injector } from '@angular/core';
+import { NgModule, APP_INITIALIZER, Injector, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppComponent } from './app.component';
@@ -10,6 +10,12 @@ import { AppSettingsService } from './core/services/app-settings.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LOCATION_INITIALIZED } from '@angular/common';
 import { SharedModule } from './shared/shared.module';
+import { IndexComponent } from './common/Index/Index.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreReducer } from './store/store';
+import { effects } from './store/effects';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -61,10 +67,13 @@ export function translationInitializerFactory(translate: TranslateService, injec
         deps: [HttpClient]
       }
     }),
-
+    StoreModule.forRoot(StoreReducer),
+    EffectsModule.forRoot(effects),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],
   declarations: [
     AppComponent,
+    IndexComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -27,7 +27,7 @@ export class SideBarComponent {
 
 
   ngAfterViewInit() {
-    this.logoutButton.nativeElement.addEventListener('click', this.logout.bind(this));
+    //this.logoutButton.nativeElement.addEventListener('click', this.logout.bind(this));
   }
   //#region Menu
   menuOpen: boolean = false;

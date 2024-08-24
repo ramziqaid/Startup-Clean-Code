@@ -9,7 +9,6 @@ import { SharedModule } from '../shared/shared.module';
 import { RegisterComponent } from './pages/register/register.component';
 import { Page404Component } from './pages/page404/page404.component';
 import { Page500Component } from './pages/page500/page500.component';
-import { IndexComponent } from './pages/Index/Index.component';
 import { AccessDeniedPageComponent } from './pages/access-denied-page/access-denied-page.component';
 import { FooterComponent } from './containers/footer/footer.component';
 import { BodyContentComponent } from './containers/body-content/body-content.component';
@@ -33,7 +32,6 @@ import { ContentBarComponent } from './containers/content-bar/content-bar.compon
     RegisterComponent,
     Page404Component,
     Page500Component,
-    IndexComponent,
     SideBarComponent,
     AccessDeniedPageComponent,
     BodyContentComponent,

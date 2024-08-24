@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-Index',
@@ -7,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
-  constructor() { }
 
+
+
+  constructor(private router: Router) { }
+
+  navigateToFea1() {
+
+    this.router.navigate(['/service/fea1']);
+  }
   ngOnInit() {
   }
 

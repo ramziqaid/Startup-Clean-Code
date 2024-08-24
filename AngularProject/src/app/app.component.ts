@@ -14,7 +14,7 @@ import { AppInjector } from './shared/services/app-injector.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'CMS-Admin';
+  title = 'Makkah-Admin';
   private unsubscriber: Subject<void> = new Subject<void>();
   constructor(translate: TranslateService, private authService: AuthService, private injector: Injector) {
 
@@ -22,9 +22,9 @@ export class AppComponent implements OnInit {
     translate.setDefaultLang('ar');
     // the lang to use, if the lang isn't available, it will use the current loader to get them
     translate.use('ar');
-    if (!this.authService.isUserLoggedIn()) {
-      this.authService.logout();
-    }
+    // if (!this.authService.isUserLoggedIn()) {
+    //   this.authService.logout();
+    // }
 
   }
   ngOnInit(): void {

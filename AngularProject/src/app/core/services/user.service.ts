@@ -1,17 +1,17 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { CustomHttpClient } from 'src/app/core/services/customHttp.service';
 import { ApiResponseModel } from 'src/app/core/models/api-response.model';
 import { AccountEntity } from 'src/app/entities/account.entity';
 import { AppSettingsService } from './app-settings.service';
+import { CustomHttpClient } from './customHttp.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
     providedIn: 'root',
 })
 
 export class UserService {
-    private readonly version: string = "V1";
-    public readonly urlRule: string = `${AppSettingsService.appSettings?.commonUrl}/${this.version}/Authentication`
+    public readonly urlRule: string = `${environment.apiUrl}/Authentication`
 
     constructor(private http: CustomHttpClient) {
     }
