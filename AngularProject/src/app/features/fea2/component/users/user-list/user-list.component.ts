@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Fea1Service } from '../../../fea1.service';
+import { Fea1Service } from '../../../fea2.service';
 import { DataTableColumn } from 'src/app/shared/components/datatable/datatable.ui';
 
 @Component({

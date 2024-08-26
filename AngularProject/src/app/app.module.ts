@@ -39,7 +39,7 @@ export function translationInitializerFactory(translate: TranslateService, injec
 }
 
 @NgModule({
-  providers: [
+  providers: [AppSettingsService,
     {
       provide: APP_INITIALIZER,
       useFactory: appInitializerFactory,

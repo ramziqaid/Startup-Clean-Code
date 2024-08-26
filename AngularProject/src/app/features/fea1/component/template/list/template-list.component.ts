@@ -35,20 +35,20 @@ export class TemplateListComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit() {
-    try {
-      this.interactor.loadTemplates().subscribe({
-        next: (response) => {
-          this.data = response.data;
-        }
-        ,
-        error: () => {
-          debugger
-          //this.messageService.showError('message.unhandledError');
-        },
-      });
-    } catch (error) {
-      debugger
-    }
+    // try {
+    //   this.interactor.loadTemplates().subscribe({
+    //     next: (response) => {
+    //       this.data = response.data;
+    //     }
+    //     ,
+    //     error: () => {
+    //       debugger
+    //       //this.messageService.showError('message.unhandledError');
+    //     },
+    //   });
+    // } catch (error) {
+    //   debugger
+    // }
 
   }
 
@@ -110,16 +110,16 @@ export class TemplateListComponent extends BaseComponent implements OnInit {
   }
 
   onDeleteAction(data: any) {
-    this.interactor.deleteTemplate(data.id).subscribe({
-      next: (response) => {
-        if (response.succeeded) {
-          console.warn("delete");
-        }
-      },
-      error: () => {
-        //this.messageService.showError('message.unhandledError');
-      },
-    });
+    // this.interactor.deleteTemplate(data.id).subscribe({
+    //   next: (response) => {
+    //     if (response.succeeded) {
+    //       console.warn("delete");
+    //     }
+    //   },
+    //   error: () => {
+    //     //this.messageService.showError('message.unhandledError');
+    //   },
+    // });
   }
 
 

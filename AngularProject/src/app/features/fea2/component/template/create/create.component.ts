@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TemplateModel } from 'src/app/features/fea1/model/template.model';
 import { BaseComponent } from 'src/app/shared/components/base.component';
-import { Fea1Service } from '../../../fea1.service';
+import { Fea1Service } from '../../../fea2.service';
 
 @Component({
   selector: 'app-create',

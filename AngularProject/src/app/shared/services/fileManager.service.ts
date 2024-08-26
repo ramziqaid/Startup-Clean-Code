@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { CustomHttpClient } from 'src/app/core/services/customHttp.service';
-import { fileManagerRoot } from '../../features/fea1/api-urls.enum';
 import * as mime from 'mime-db';
 import { HttpEventType } from '@angular/common/http';
 
@@ -12,9 +11,9 @@ export class FileManagerService {
   constructor(private http: CustomHttpClient) { }
 
   uploadFile(file: File) {
-    const formData: FormData = new FormData();
-    formData.append('file', file, file.name);
-    return this.http.post<any>(fileManagerRoot.Upload, formData);
+    // const formData: FormData = new FormData();
+    // formData.append('file', file, file.name);
+    // return this.http.post<any>(fileManagerRoot.Upload, formData);
   }
 
   downloadFile(apiRoot: string, fileName: string): void {

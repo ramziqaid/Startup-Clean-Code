@@ -21,7 +21,6 @@ import { PublicService } from './public.service';
     PublicComponent,
   ],
   exports: [
-    //DashboardComponent
   ],
   providers: [
     PublicService

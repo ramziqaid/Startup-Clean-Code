@@ -4,7 +4,7 @@ import { TemplateModel } from 'src/app/features/fea1/model/template.model';
 import { BaseComponent } from 'src/app/shared/components/base.component';
 import { templateRoot } from 'src/app/features/fea1/api-urls.enum';
 import { FileManagerService } from 'src/app/shared/services/fileManager.service';
-import { Fea1Service } from '../../../fea1.service';
+import { Fea1Service } from '../../../fea2.service';
 
 @Component({
   selector: 'app-details',

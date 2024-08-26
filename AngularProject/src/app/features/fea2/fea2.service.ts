@@ -8,7 +8,7 @@ import { TemplateModel } from './model/template.model';
 import { AppSettingsService } from 'src/app/core/services/app-settings.service';
 
 @Injectable()
-export class Fea1Service {
+export class Fea2Service {
 
   constructor(private http: CustomHttpClient) {
 

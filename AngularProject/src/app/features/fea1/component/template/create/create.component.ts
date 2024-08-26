@@ -19,18 +19,18 @@ export class CreateTempaletComponent extends BaseComponent implements OnInit {
   }
 
   onSubmit() {
-    this.interactor.insertTemplate(this.temp).subscribe({
-      next: (response) => {
-        if (response.succeeded) {
-          console.warn("save");
-        }
-      },
-      error: () => {
-        //this.messageService.showError('message.unhandledError');
-      },
-    });
-    // Handle form submission
-    console.log('Form submitted:', this.temp);
+    // this.interactor.insertTemplate(this.temp).subscribe({
+    //   next: (response) => {
+    //     if (response.succeeded) {
+    //       console.warn("save");
+    //     }
+    //   },
+    //   error: () => {
+    //     //this.messageService.showError('message.unhandledError');
+    //   },
+    // });
+    // // Handle form submission
+    // console.log('Form submitted:', this.temp);
   }
 
   onUpload(file: File) {

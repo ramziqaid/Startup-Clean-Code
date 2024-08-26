@@ -2,11 +2,17 @@ import { AppSettingsService } from 'src/app/core/services/app-settings.service';
 
 export class ApitUrls {
   private static readonly version: string = "V1";
-  public static readonly Rule: string = `${this.getApiUrl()}/${this.version}/`
+
+  public static get Rule(): string {
+    return `${this.getApiUrl()}/${this.version}/`;
+  }
 
   private static getApiUrl() {
-    debugger
-    return AppSettingsService.appSettings?.apiUrl;
+    return AppSettingsService.appSettings?.apiUrl ?? '';
+  }
+
+  static lookupGetServiceCategory() {
+    return `${this.getApiUrl()}Lookup/GetServiceCategory`;
   }
 }
 

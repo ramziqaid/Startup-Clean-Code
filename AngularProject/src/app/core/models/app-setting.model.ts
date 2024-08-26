@@ -10,7 +10,6 @@ export class AppSettingModel {
      *
      */
     constructor() {
-        debugger
     }
 }
 

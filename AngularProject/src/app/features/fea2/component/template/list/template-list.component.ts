@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { BaseComponent } from 'src/app/shared/components/base.component';
 import { DataTableColumn } from 'src/app/shared/components/datatable/datatable.ui';
 import { TemplateEntity } from '../../../entities/template-entity';
-import { Fea1Service } from '../../../fea1.service';
+import { Fea1Service } from '../../../fea2.service';
 
 @Component({
   selector: 'app-template-list',

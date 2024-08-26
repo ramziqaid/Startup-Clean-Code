@@ -5,20 +5,22 @@ import { AccountEntity } from 'src/app/entities/account.entity';
 import { AppSettingsService } from './app-settings.service';
 import { CustomHttpClient } from './customHttp.service';
 import { environment } from 'src/environments/environment';
+import { ApitUrls } from 'src/app/shared/enums/api-urls.enum';
+import { ApiCoreUrls } from './api-urls.enum';
 
 @Injectable({
     providedIn: 'root',
 })
 
 export class UserService {
-    public readonly urlRule: string = `${environment.apiUrl}/Authentication`
+    public readonly urlRule: string = `${AppSettingsService.appSettings?.apiUrl}/Authentication`
 
     constructor(private http: CustomHttpClient) {
     }
     login(params: { username: string, password: string }): Observable<ApiResponseModel<AccountEntity>> {
         const paramsx = new Map<string, string>(Object.entries(params));
         return this.http
-            .postForm<AccountEntity>(`${this.urlRule}/SignIn`, paramsx)
+            .postForm<AccountEntity>(ApiCoreUrls.login(), paramsx)
             .pipe();
     }
 

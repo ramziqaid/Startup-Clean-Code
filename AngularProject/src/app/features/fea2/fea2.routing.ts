@@ -1,7 +1,7 @@
 
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { Fea1Component } from './fea1.component';
+import { Fea1Component } from './fea2.component';
 import { AuthGuard } from 'src/app/shared/guards/auth.guard';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { UiComponentsComponent } from './component/ui-components/ui-components.component';
