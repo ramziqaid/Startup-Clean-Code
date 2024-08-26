@@ -2,23 +2,23 @@
   (cancelAction)="reset()" (showNew)="showNew" (showEdit)="showEdit" (showSave)="showSave" (showDelete)="showDelete"
   (showCancel)="showCancel" (showPrint)="showPrint">
 </actionBar>
-<U-button type="submit" (onClick)="show()">
+<MK-button type="submit" (onClick)="show()">
   <!--(click)="signin()"-->
   {{ 'SHD_SIGN_IN' | translate }}
-</U-button>
+</MK-button>
 
-<U-checkbox name="all" [(checked)]="allApplicationSelected">
+<MK-checkbox name="all" [(checked)]="allApplicationSelected">
   {{ 'SHD_SIGN_IN' | translate }}
-</U-checkbox>
+</MK-checkbox>
 <div class="col-16">
-  <U-label name="lblID">{{ 'FGL_BANK'| translate}}</U-label>
+  <MK-label name="lblID">{{ 'FGL_BANK'| translate}}</MK-label>
 </div>
 <!-- <div class="col-16">
-  <U-textbox name="lblID">{{ 'FGL_BANK'| translate}}</U-textbox>
+  <MK-textbox name="lblID">{{ 'FGL_BANK'| translate}}</MK-textbox>
 </div>  -->
 
 <form>
-  <U-datatable [columns]="debitSideColumns" [data]="data" (onEditAction)="onEditAction($event)"
+  <MK-datatable [columns]="debitSideColumns" [data]="data" (onEditAction)="onEditAction($event)"
     (onDeleteAction)="onDeleteAction($event)">
-  </U-datatable>
+  </MK-datatable>
 </form>

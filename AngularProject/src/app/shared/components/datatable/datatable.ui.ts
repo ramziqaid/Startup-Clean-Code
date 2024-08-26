@@ -2,7 +2,7 @@ import { Component, ContentChild, EventEmitter, Input, OnInit, Output, TemplateR
 import { ControlContainer, NG_VALUE_ACCESSOR, NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'U-datatable',
+  selector: 'MK-datatable',
   templateUrl: './datatable.ui.html',
   styleUrls: ['./datatable.ui.css'],
   viewProviders: [{ provide: ControlContainer, useExisting: NgForm }],

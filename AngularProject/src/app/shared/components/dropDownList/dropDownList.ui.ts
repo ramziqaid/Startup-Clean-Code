@@ -2,7 +2,7 @@ import { Component, Input, OnInit, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'U-dropDownList',
+  selector: 'MK-dropDownList',
   templateUrl: './dropDownList.ui.html',
   styleUrls: ['./dropDownList.ui.css'],
   providers: [
@@ -14,8 +14,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   ]
 })
 export class DropDownListUI implements ControlValueAccessor {
-  selectValue: any; 
-  
+  selectValue: any;
+
   @Input()
   options: Option[];
 
@@ -24,23 +24,23 @@ export class DropDownListUI implements ControlValueAccessor {
 
   constructor() { }
 
-  propagateChange = (_: any) => {};
+  propagateChange = (_: any) => { };
 
-  onChange(value: any){
+  onChange(value: any) {
     this.selectValue = value.target.value;
     this.propagateChange(this.selectValue);
   }
 
-  writeValue(obj: any): void{
-    if(obj)
-    this.selectValue = obj;
+  writeValue(obj: any): void {
+    if (obj)
+      this.selectValue = obj;
   }
-  
-  registerOnChange(fn: any): void{
+
+  registerOnChange(fn: any): void {
     this.propagateChange = fn;
   }
 
-  registerOnTouched() {}
+  registerOnTouched() { }
 }
 export interface Option {
   value: any;

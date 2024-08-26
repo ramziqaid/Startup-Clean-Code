@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-ui-radiobutton',
+  selector: 'MK-radiobutton',
   templateUrl: './ui-radiobutton.component.html',
   styleUrls: ['./ui-radiobutton.component.css']
 })

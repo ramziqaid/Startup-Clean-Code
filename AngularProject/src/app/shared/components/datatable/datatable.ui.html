@@ -11,13 +11,13 @@
       <td *ngFor="let key of columns">
         <ng-container [ngSwitch]="key.controlType">
           <div *ngSwitchCase="'textBox'">
-            <U-textbox id="id_{{ i }}" name="name_{{ i }}" type="text" [value]="item[key.field]" [disabled]="true">
-            </U-textbox>
+            <MK-textbox id="id_{{ i }}" name="name_{{ i }}" type="text" [value]="item[key.field]" [disabled]="true">
+            </MK-textbox>
           </div>
           <div *ngSwitchCase="'checkBox'">
-            <U-checkbox id="id_{{ i }}" name="name_{{ i }}" [checked]="item[key.field]">
+            <MK-checkbox id="id_{{ i }}" name="name_{{ i }}" [checked]="item[key.field]">
               {{ "label."+item[key.field] | translate }}
-            </U-checkbox>
+            </MK-checkbox>
 
           </div>
           <div *ngSwitchDefault>
@@ -28,12 +28,12 @@
 
       </td>
       <td>
-        <U-button type="button" (onClick)="editAction(item)" [color]="'primary'">
+        <MK-button type="button" (onClick)="editAction(item)" [color]="'primary'">
           {{ "label.edit" | translate }}
-        </U-button>
-        <U-button type="button" (onClick)="deleteAction(item)" [color]="'success'">
+        </MK-button>
+        <MK-button type="button" (onClick)="deleteAction(item)" [color]="'success'">
           {{ "label.delete" | translate }}
-        </U-button>
+        </MK-button>
       </td>
     </tr>
   </tbody>

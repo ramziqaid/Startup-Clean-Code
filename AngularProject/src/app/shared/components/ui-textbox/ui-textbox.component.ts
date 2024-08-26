@@ -1,4 +1,4 @@
- 
+
 
 import { Component, Input, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
@@ -12,16 +12,16 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
     multi: true
 };
 @Component({
-    selector: 'ui-textbox',
+    selector: 'MK-textbox',
     templateUrl: './ui-textbox.component.html',
     styleUrls: ['./ui-textbox.component.css'],
     providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
 
-  })
- 
+})
+
 export class UiTextboxComponent implements ControlValueAccessor {
-    @Input({ alias: 'id',required: true }) id:string='';
-    @Input({ alias: 'name',required: true }) name:string='';
+    @Input({ alias: 'id', required: true }) id: string = '';
+    @Input({ alias: 'name', required: true }) name: string = '';
 
     //The internal data model
     private innerValue: any = '';

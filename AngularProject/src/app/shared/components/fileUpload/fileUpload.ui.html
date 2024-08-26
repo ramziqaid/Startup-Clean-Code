@@ -1,20 +1,11 @@
 <!-- file-upload.component.html -->
 
-<input type="file" class="form-control"  
-    (change)="onFileSelected($event)" 
-    [placeholder]="placeholder" 
-    [required]="required" 
-    [id]="id"
-    [(ngModel)]="value"
-    [name]="name"
-    #filex="ngModel"
-    [disabled]="disabled"
-/>
+<input type="file" class="form-control" (change)="onFileSelected($event)" [placeholder]="placeholder"
+    [required]="required" [id]="id" [(ngModel)]="value" [name]="name" #filex="ngModel" [disabled]="disabled" />
 <validation-messages [formCtrl]="filex"></validation-messages>
-<U-button  type="button" (onClick)="upload()" 
-        [color]="'success'">
-  {{ "label.upload" | translate }}
-</U-button>  
+<MK-button type="button" (onClick)="upload()" [color]="'success'">
+    {{ "label.upload" | translate }}
+</MK-button>
 <!-- <button (click)="onUpload()">
     <ng-content></ng-content>
 </button> -->

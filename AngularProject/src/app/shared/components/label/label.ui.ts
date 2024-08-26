@@ -1,18 +1,18 @@
 import { Component, ElementRef, Input, OnChanges, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
- 
+
 import { Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
-  selector: 'U-label',
+  selector: 'MK-label',
   templateUrl: './label.ui.html',
   styleUrls: ['./label.ui.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LabelUI  implements OnChanges { 
+export class LabelUI implements OnChanges {
 
   constructor(myElement: ElementRef) {
-     
+
     this.elementRef = myElement;
   }
 

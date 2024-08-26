@@ -2,7 +2,7 @@ import { Component, Input, OnInit, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'U-textarea',
+  selector: 'MK-textarea',
   templateUrl: './textarea.ui.html',
   styleUrls: ['./textarea.ui.css'],
   providers: [

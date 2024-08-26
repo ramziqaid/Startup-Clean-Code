@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'U-checkbox',
+  selector: 'MK-checkbox',
   templateUrl: './checkbox.ui.html',
   styleUrls: ['./checkbox.ui.scss']
 })
@@ -15,7 +15,7 @@ export class CheckboxUI implements OnInit {
   @Input() class: string = "";
   @Input() name: string;
   @Input() hidden: boolean;
-  @Input() disabled?: boolean | null= null;
+  @Input() disabled?: boolean | null = null;
 
   @Input() checked: boolean;
   @Output() checkedChange = new EventEmitter();

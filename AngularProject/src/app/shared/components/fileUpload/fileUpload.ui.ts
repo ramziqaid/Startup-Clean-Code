@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
- import { ControlContainer, NgForm } from '@angular/forms';
+import { ControlContainer, NgForm } from '@angular/forms';
 import { FileManagerService } from '../../services/fileManager.service';
 
 @Component({
-  selector: 'U-fileUpload',
+  selector: 'MK-fileUpload',
   templateUrl: './fileUpload.ui.html',
   styleUrls: ['./fileUpload.ui.css'],
   viewProviders: [{ provide: ControlContainer, useExisting: NgForm }],
@@ -16,19 +16,19 @@ export class FileUploadUI implements OnInit {
   @Input() label: any;
   @Input() forLabel: any;
   @Input() placeholder: any;
-  @Input() required: boolean=false;
-  @Input() class: string = ""; 
+  @Input() required: boolean = false;
+  @Input() class: string = "";
   @Input() hidden: boolean;
-  @Input() disabled: boolean   = false;
- 
+  @Input() disabled: boolean = false;
+
   @Output() onUpload = new EventEmitter<File>();
-  
+
   selectedFile: File;
   constructor(private fileUploadService: FileManagerService) { }
 
   ngOnInit() {
   }
-  onFileSelected(event:any) {
+  onFileSelected(event: any) {
     this.selectedFile = event.target.files[0];
     const formData: FormData = new FormData();
     formData.append('file', this.selectedFile, this.selectedFile.name);
@@ -40,7 +40,7 @@ export class FileUploadUI implements OnInit {
     //   let fileToUpload = <File>this.selectedFile;
     //   const formData = new FormData();
     //   formData.append('file', fileToUpload, fileToUpload.name);
-  
+
     //   // this.http.post(`${this.baseUrl}Attachement/UploadFile`, formData, { reportProgress: true, observe: 'events' })
     //   //   .subscribe(event => {
     //   //     if (event.type === HttpEventType.UploadProgress)

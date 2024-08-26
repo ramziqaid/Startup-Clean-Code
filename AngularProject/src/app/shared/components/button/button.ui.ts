@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'U-button',
+  selector: 'MK-button',
   templateUrl: './button.ui.html',
   styleUrls: ['./button.ui.scss'],
   providers: [
@@ -13,7 +13,7 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
     }
   ]
 })
-export class ButtonUI implements OnInit , OnChanges {
+export class ButtonUI implements OnInit, OnChanges {
 
   @Input()
   name: string;
@@ -56,8 +56,8 @@ export class ButtonUI implements OnInit , OnChanges {
   clickEvent() {
     this.onClick.emit();
   }
-  
-  ngOnChanges(changes: SimpleChanges ) { 
+
+  ngOnChanges(changes: SimpleChanges) {
     if (changes['color'] && this.color) {
       switch (this.color.toLocaleLowerCase()) {
         case "focus":
@@ -92,6 +92,6 @@ export class ButtonUI implements OnInit , OnChanges {
       }
     }
 
-    
+
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'U-datetime',
+  selector: 'MK-datetime',
   templateUrl: './datetime.ui.html',
   styleUrls: ['./datetime.ui.css']
 })

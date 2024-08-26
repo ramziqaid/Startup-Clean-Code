@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output, forwardRef } from '@ang
 import { ControlContainer, ControlValueAccessor, NG_VALUE_ACCESSOR, NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'U-textbox',
+  selector: 'MK-textbox',
   templateUrl: './textbox-ui.html',
   styleUrls: ['./textbox-ui.css'],
   viewProviders: [{ provide: ControlContainer, useExisting: NgForm }],
@@ -21,17 +21,17 @@ export class TextboxUI implements ControlValueAccessor {
   @Input() label: any;
   @Input() forLabel: any;
   @Input() placeholder: any;
-  @Input() required: boolean=false;
+  @Input() required: boolean = false;
   @Input({ required: true }) type: string = 'text';
-  @Input() disabled: boolean   = false;
+  @Input() disabled: boolean = false;
 
   @Output() valueChange = new EventEmitter();
-  
+
   constructor() { }
 
-  propagateChange = (fn: any) => {};
+  propagateChange = (fn: any) => { };
 
-  changeValue(value: any){ 
+  changeValue(value: any) {
     // this.value = value;
     // this.propagateChange(this.value);
   }
@@ -39,19 +39,19 @@ export class TextboxUI implements ControlValueAccessor {
     // Your custom logic here
     //debugger
     this.value = (event.target as HTMLInputElement).value;
-    this.valueChange.emit(this.value);  
+    this.valueChange.emit(this.value);
     // You can perform any other actions or modifications based on the input event
   }
-  writeValue(obj: any): void{
-    if(obj)
-    this.value = obj;
+  writeValue(obj: any): void {
+    if (obj)
+      this.value = obj;
   }
 
-  registerOnChange(fn: any): void{
+  registerOnChange(fn: any): void {
     this.propagateChange = fn;
   }
 
-  registerOnTouched(fn: any): void{
+  registerOnTouched(fn: any): void {
 
   }
 
